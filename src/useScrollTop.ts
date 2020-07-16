@@ -7,7 +7,7 @@ import { useLocation } from 'react-router'
  *
  * @returns
  */
-const useScrollToTop = () => {
+export const useScrollToTop = () => {
 	const { pathname } = useLocation()
 	useEffect(() => {
 		window.scrollTo(0, 0)
@@ -15,10 +15,10 @@ const useScrollToTop = () => {
 }
 
 /**
- *路由变化滚动到顶部，且记录上次路径的滚动位置
+ *路由变化滚动到顶部，且记录上次路径的滚动位置, 需注意异步数据加载导致的高度变化，可以增加对异步数据的依赖数据加载后执行位置恢复
  *
  */
-const useRecoverScrollTop = () => {
+export const useRecoverScrollTop = () => {
 	const { pathname } = useLocation()
 	useEffect(() => {
 		try {

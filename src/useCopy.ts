@@ -18,7 +18,8 @@ export const useCopy = () => {
   useEffect(() => {
     const input = document.createElement('input') //也可以在copyToPaste中创建
     document.body.appendChild(input)
-    input.style.display = 'none' //不在网页上显示
+    input.style.position = 'absolute' //不在网页上显示
+    input.style.left = '-99999px'
     copyRef.current = input
     return () => {
       document.body.removeChild(input)
